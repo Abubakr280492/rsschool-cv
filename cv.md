@@ -84,3 +84,15 @@ export default connect(mapStateToProps, mapDispatchToProps )(App);
 + HTML,CSS,SCSS,Bootstrap,JavaScript
 + On process (Redux-Saga,Hooks,Context API,GraphQL)
 
+## Education
+
+ + Inha Univercity in Tashkent(Computer Science and Engineering)
++ RSSchool (on process)
++ Udemy(Go Lang)
+ + Udacity
+ + FreeCodeCamp
+ 
+ ## English 
+ +    IELTS 7.0
+ 
+
