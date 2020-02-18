@@ -1,0 +1,152 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <img src="https://avatars1.githubusercontent.com/u/47207825?s=460&v=4" alt="photo">
+        <h1>Abubakr Abdullaev</h1> 
+        <p>[Linked In](https://www.linkedin.com/in/abubakr-abdi-abdullaev-358557150/)</p>    
+        <h4>+15132755276</h4>
+        <h4>+998901107699</h4>
+        <h2>I would like to be one of the best full-stack developer in the world!</h2>
+        <h2> Skills</h2>
+        <ul>
+            <li>HTML,CSS,SCSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>C++,Java</li>
+        </ul>
+           <h2>Code examples</h2>
+    <code>
+        React
+        import React from 'react';
+        import './App.css';
+        import {Switch, Route, Redirect} from 'react-router-dom';
+        
+        class App extends React.Component {
+          unsubscribeFromAuth = null;
+          componentDidMount (){ 
+            const {setCurrentUser}= this.props;
+            this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth =>{
+              if(userAuth) {
+                const userRef = await createUserProfileDocument(userAuth);
+                if(userRef) {
+                 userRef.onSnapshot(snapShot => {
+                  setCurrentUser({
+                        id: snapShot.id,
+                        ...snapShot.data()
+                      });
+                  });
+                } else {
+                  alert('There cridential error, please fix it')
+                }
+              }
+              setCurrentUser(userAuth);
+            });  
+          }
+          componentWillUnmount(){
+            this.unsubscribeFromAuth();
+          }
+          //gonna send to the dom 
+          render() { 
+            return (
+              <div >
+                  <Header/>
+                <Switch>
+                  <Route exact path='/' component={Homepage}/>
+                  <Route  path='/shop' component={ShopPage}/>  
+                  <Route exact path='/checkout' component={CheckoutPage}/>  
+                  <Route exact path='/signin' render={() => 
+                    this.props.currentUser? (
+                      <Redirect to='/'/>
+                    ):(
+                      <SignInAndSignUpPage />
+                    )} 
+                  />
+                </Switch>
+              </div>
+            );
+          }
+        }
+        //method to combine with redux state
+        const mapStateToProps = state => ({
+          currentUser: selectCurrentUser(state)
+        });
+         
+        //dispatches actions
+        const mapDispatchToProps = dispatch => ({
+        setCurrentUser: user => dispatch(setCurrentUser(user))
+        });
+        export default connect(mapStateToProps, mapDispatchToProps )(App);  
+    </code>    
+        
+        
+    <h2> Experience</h2> 
+        <ul>
+            <li> React (React Router,Redux,Firebase)</li>
+            <li>HTML,CSS,SCSS,Bootstrap,JavaScript</li>
+            <li>On process (Redux-Saga,Hooks,Context API,GraphQL)</li>
+    
+        </ul>
+      
+     <h2>Education</h2>
+        <ul>
+            <li>Inha University in Tashkent(Computer Science and Engineering)</li>
+            <li>RSSchool (on process)</li>
+            <li>Udemy(Go Lang)</li>
+            <li>Udacity</li>
+            <li>FreeCodeCamp</li>
+    
+        </ul>
+      <h2>English </h2>
+         <ul>
+    
+            <li> IELTS 7.0</li>
+         </ul>
+      <footer>
+        <h4>2020. All rights reserved. Created by Abdullaev Abubakr. IUT 2020</h4>
+      </footer>
+<style> 
+*{
+  margin: 0 auto;
+  padding: 0 auto;
+  font-family: "Lato", sans-serif;
+}
+body{
+        width: 1024px;
+        text-align: center;
+}
+img{
+        margin: 10px;
+        padding: 10px;
+        background-color: aqua;
+        width:200px;
+        border-radius: 45%;
+    }
+h1{
+  margin: 10px;
+  padding: 10px;
+  background-color: blueviolet;
+}
+h2{
+  margin: 10px;
+  padding: 10px;
+  background-color:chartreuse;
+}
+
+    ul li{
+        text-decoration: none;
+        list-style-type: none;
+    }
+  footer{
+    margin: 12px;
+    padding: 20px;
+    background-color: blueviolet;
+  }
+</style>
+</body>
+</html>
+
+
