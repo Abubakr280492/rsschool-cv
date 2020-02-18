@@ -79,4 +79,8 @@ setCurrentUser: user => dispatch(setCurrentUser(user))
 export default connect(mapStateToProps, mapDispatchToProps )(App);
 ```
 
+## Experience 
++ React (React Router,Redux,Firebase)
++ HTML,CSS,SCSS,Bootstrap,JavaScript
++ On process (Redux-Saga,Hooks,Context API,GraphQL)
 
